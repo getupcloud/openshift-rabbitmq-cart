@@ -3,7 +3,7 @@
 Summary:       Provides embedded RabbitMQ support
 Name:          openshift-cartridge-rabbitmq
 Version:       1.0.0
-Release:       1%{?dist}
+Release:       2%{?dist}
 Group:         Network/Daemons
 License:       ASL 2.0
 URL:           http://www.rabbitmq.com
