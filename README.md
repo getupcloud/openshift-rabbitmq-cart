@@ -23,7 +23,7 @@ http://fedoraproject.org/wiki/EPEL/FAQ#howtouse
 
 Add the cartridge from github:
 
-    rhc cartridge add https://raw.github.com/commonsmachinery/openshift-rabbitmq-cart/master/metadata/manifest.yml -a MY_APP
+    rhc cartridge-add https://reflector-getupcloud.getup.io/github/getupcloud/openshift-rabbitmq-cartridge -a <app>
 
 
 Environment variables
