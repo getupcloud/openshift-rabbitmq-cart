@@ -39,3 +39,6 @@ Provides RabbitMQ cartridge support to OpenShift.
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Fri Mar 06 2015 Builder <getup@getupcloud.com> 1.0.0-1
+- new package built with tito
+
