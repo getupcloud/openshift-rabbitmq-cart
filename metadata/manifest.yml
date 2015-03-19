@@ -1,7 +1,7 @@
 Name: rabbitmq
 Cartridge-Short-Name: RABBITMQ
 Cartridge-Version: 1.0.0
-Cartridge-Vendor: redhat
+Cartridge-Vendor: getup
 Display-Name: RabbitMQ
 Description: 'RabbitMQ message broker.  Note: this cartridge does not yet support scaling.'
 Version: 3.2.4
