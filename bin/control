@@ -36,6 +36,8 @@ function start() {
     ERL_EPMD_PORT=$OPENSHIFT_RABBITMQ_EPMD_PORT \
     "$bindir/rabbitmq-server" </dev/null >/dev/null 2>&1 &
 
+    "$bindir/rabbitmq-server" |& /usr/bin/logshifter -tag rabbitmq &
+
     if ! "$bindir/rabbitmqctl" wait "$RABBITMQ_PID_FILE"
     then
         client_error "Error waiting for RabbitMQ server to start"
