@@ -33,7 +33,9 @@ function start() {
 
     set -x
 
-    HOST_ADDRESS=$(python -c "import socket; print socket.gethostbyname('$OPENSHIFT_GEAR_DNS')")
+    for ((i=0; i<5; i++)); do
+        HOST_ADDRESS=$(python -c "import socket; print socket.gethostbyname('$OPENSHIFT_GEAR_DNS')") || sleep 2
+    done
 
     # Starting with -detached doesn't give us a pid file...
     ERL_EPMD_ADDRESS=$HOST_ADDRESS \
