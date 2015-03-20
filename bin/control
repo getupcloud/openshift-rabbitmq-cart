@@ -32,12 +32,11 @@ function start() {
     fi
 
     set -x
-    for ((i=0; i<5; i++)); do
-        host $OPENSHIFT_GEAR_DNS &> /dev/null && break || sleep 2
-    done
+
+    HOST_ADDRESS=$(python -c "import socket; print socket.gethostbyname('$OPENSHIFT_GEAR_DNS')")
 
     # Starting with -detached doesn't give us a pid file...
-    ERL_EPMD_ADDRESS=$OPENSHIFT_RABBITMQ_EPMD_IP \
+    ERL_EPMD_ADDRESS=$HOST_ADDRESS \
     ERL_EPMD_PORT=$OPENSHIFT_RABBITMQ_EPMD_PORT \
     "$bindir/rabbitmq-server" # |& /usr/bin/logshifter -tag rabbitmq &
 
