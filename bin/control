@@ -34,8 +34,6 @@ function start() {
     # Starting with -detached doesn't give us a pid file...
     ERL_EPMD_ADDRESS=$OPENSHIFT_RABBITMQ_EPMD_IP \
     ERL_EPMD_PORT=$OPENSHIFT_RABBITMQ_EPMD_PORT \
-    "$bindir/rabbitmq-server" </dev/null >/dev/null 2>&1 &
-
     "$bindir/rabbitmq-server" |& /usr/bin/logshifter -tag rabbitmq &
 
     if ! "$bindir/rabbitmqctl" wait "$RABBITMQ_PID_FILE"
