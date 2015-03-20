@@ -33,7 +33,7 @@ function start() {
 
     set -x
     for ((i=0; i<5; i++)); do
-        host $OPENSHIFT_RABBITMQ_EPMD_IP &> /dev/null && break || sleep 2
+        host $OPENSHIFT_GEAR_DNS &> /dev/null && break || sleep 2
     done
 
     # Starting with -detached doesn't give us a pid file...
