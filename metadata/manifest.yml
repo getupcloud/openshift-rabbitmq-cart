@@ -35,9 +35,12 @@ Endpoints:
     Private-Port-Name: BROKER_PORT
     Private-Port: 5672
     Public-Port-Name: BROKER_PROXY_PORT
+
   - Private-IP-Name: EPMD_IP
     Private-Port-Name: EPMD_PORT
     Private-Port: 4369
+    Public-Port-Name: EPMD_PROXY_PORT
+
   - Private-IP-Name: MANAGEMENT_IP
     Private-Port-Name: MANAGEMENT_PORT
     Private-Port: 15672
