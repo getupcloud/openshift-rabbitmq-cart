@@ -32,6 +32,7 @@ function start() {
     fi
 
     sleep 30
+    host $OPENSHIFT_GEAR_DNS
 
     export ERL_EPMD_ADDRESS=$OPENSHIFT_GEAR_DNS
     export ERL_EPMD_PORT=$OPENSHIFT_RABBITMQ_EPMD_PROXY_PORT
