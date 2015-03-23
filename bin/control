@@ -31,8 +31,9 @@ function start() {
         return 0
     fi
 
-    sleep 30
-    host $OPENSHIFT_GEAR_DNS
+    while ! host $OPENSHIFT_GEAR_DNS; do
+        sleep 5
+    done
 
     export ERL_EPMD_ADDRESS=$OPENSHIFT_GEAR_DNS
     export ERL_EPMD_PORT=$OPENSHIFT_RABBITMQ_EPMD_PROXY_PORT
