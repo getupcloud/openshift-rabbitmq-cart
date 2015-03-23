@@ -90,7 +90,7 @@ get_source "$rabbitmq_tgz" "$rabbitmq_url" "$rabbitmq_md5"
     sed -i 's/-sname/-name/' rabbitmq/sbin/*
 
     # Use start server script with no EPMD
-    cat scripts/rabbitmq-server > rabbitmq/sbin/rabbitmq-server
+    cat ${OPENSHIFT_RABBITMQ_DIR}scripts/rabbitmq-server > rabbitmq/sbin/rabbitmq-server
 
     # But we have to do some Erlang configuration
     cat >rabbitmq/etc/rabbitmq/rabbitmq-env.conf <<EOF
