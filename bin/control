@@ -31,7 +31,7 @@ function start() {
         return 0
     fi
 
-    export ERL_EPMD_ADDRESS=$OPENSHIFT_RABBITMQ_BROKER_HOST
+    export ERL_EPMD_ADDRESS=$OPENSHIFT_GEAR_DNS
     export ERL_EPMD_PORT=$OPENSHIFT_RABBITMQ_EPMD_PROXY_PORT
 
     # Starting with -detached doesn't give us a pid file...
